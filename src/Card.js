@@ -1,21 +1,26 @@
 import React from 'react'
 import './style.css'
-
-const Card = (props) => {
+import Button from 'react-bootstrap/Button'
+import Card from 'react-bootstrap/Card'
+const Cards = (props) => {
     return (
-        <div className="cards">
-            <div className="card">
-                <img src={props.img} className="card_img" alt="there was an IMG" />
-                <div className="card_info">
-                    <span className="card_category"></span>
-                    <h3 className="card_title">{props.sname}</h3>
-                    <a href={props.links} >
-                        <button>WatchNow</button>
+
+        <div className="container text-center Card" >
+            <Card style={{ width: '13rem', float: "left", marginLeft: "12px" }}>
+                <Card.Img variant="top" src={props.img} alt="there was an image" />
+                <Card.Body>
+                    <Card.Title>{props.sname}</Card.Title>
+                    <Card.Text>
+                        {props.title}
+                    </Card.Text>
+                    <a href="{props.links}">
+                        <Button variant="primary">watch now</Button>
                     </a>
-                </div>
-            </div>
+                </Card.Body>
+            </Card>
         </div>
     )
 }
 
-export default Card
+
+export default Cards

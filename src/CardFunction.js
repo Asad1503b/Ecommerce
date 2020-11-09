@@ -1,24 +1,33 @@
 import React from 'react'
-import Card from './Card';
-import './style.css'
+import Cards from './Card';
+// import './style.css'
 import seriesData from './seriesData'
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
+
+import Searchbox from './Searchbox';
 
 const CardFunction = (val) => {
     function ArrMap(val) {
         return (
-            <Card
-                img={val.img}
-                sname={val.sname}
-                title={val.title}
-                links={val.links}
+            <div>
+                <Cards
+
+                    img={val.img}
+                    sname={val.sname}
+                    title={val.title}
+                    links={val.links}
 
 
-            />
+                />
+            </div>
         )
     }
     return (
         <div>
-            <h1 className="heading_style">Top 5 NETFLIX Series</h1>
+
+            <div className=" container " style={{ marginTop: '4rem' }}>
+                <Searchbox />
+            </div>
             {
                 seriesData.map(ArrMap)
             }
